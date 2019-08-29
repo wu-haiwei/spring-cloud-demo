@@ -1,0 +1,14 @@
+server:
+  port: 8008
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureakaservice01.com:8002/eureka,http://eureakaservice02.com:8005/eureka,http://eureakaservice03.com:8006/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+
+spring:
+  application:
+    name: spring-cloud-eureka-provider

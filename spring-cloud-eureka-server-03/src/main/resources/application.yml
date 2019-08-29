@@ -1,0 +1,11 @@
+server:
+  port: 8006
+
+eureka:
+  instance:
+    hostname: eureakaservice03.com
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://eureakaservice01.com:8002/eureka,http://eureakaservice02.com:8005/eureka,http://eureakaservice03.com:8006/eureka

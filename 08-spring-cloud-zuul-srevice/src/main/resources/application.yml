@@ -1,0 +1,25 @@
+server:
+  port: 8016
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureakaservice01.com:8002/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+
+spring:
+  application:
+    name: spring-cloud-zuul-srevice
+  profiles:
+    active:
+
+zuul:
+  routes:
+    spring-cloud-zuul-consumer: /consumer/**
+  prefix: /mmm
+  ignored-services: '*'
+
+
+
